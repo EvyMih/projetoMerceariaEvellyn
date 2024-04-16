@@ -85,7 +85,7 @@ function finalizarCompra(){
 
     totalValor = (totalArroz + totalFeijao + totalSuco + totalMacarrao + totalOvo);
 
-    valorFinal.innerHTML = ("O total da sua compra esta em R$ " + totalArroz.toFixed(2))
+    valorFinal.innerHTML = ("O total da sua compra esta em R$ " + totalValor.toFixed(2))
 
     if (totalValor == 0){
         valorFinal.innerHTML = "Carrinho Vazio!"
