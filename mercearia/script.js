@@ -91,3 +91,4 @@ function finalizarCompra(){
         valorFinal.innerHTML = "Carrinho Vazio!"
     }
 }
+// oiiii
