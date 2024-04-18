@@ -1,0 +1,38 @@
+<!DOCTYPEhtml>
+<html lang="pt-br">
+<cabeça>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="largura=largura do dispositivo, escala inicial=1,0">
+    <title>Mercearia da Evellyn</title>
+</head>
+<corpo>
+    
+    <h1>Mercearia da Evellyn</h1>
+    <h4>Produtos disponíveis</h4>
+    <ul>
+        <li>Banana</li>
+        <li>Laranja</li>
+        <li>Maça</li>
+        <li>Abacate</li>
+        <li>Pera</li>        
+    </ul>
+
+    <input type="text" id="nomeDoProduto" placeholder="Digite o nome do produto">
+
+    <button onclick="valores()">Consultar valor</button>
+
+    <br><br>
+
+    <div id="valorProduto"></div>
+    
+    <br>
+
+    <button onclick="addCarrinho()">Colocar no carrinho</button>
+    <button onclick="totalCompra()">Finalizar compra</button>
+
+    <br>
+    <p id="valorCarrinho" style="margin-left: 25px;"></p>
+
+    <script src="merceariaComObjetos.js"></script>
+</body>
+</html>

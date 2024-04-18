@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <h1>Mercearia da Evellyn</h1>
-    <h4>Produtos Disponíveis</h4>
-    
+    <h1 style="color:rgb(255, 255, 255);background-color:rgb(97, 31, 173); width: 100%; text-align: center;">Mercearia da Evellyn</h1>
+    <h4 style = "color:rgb(97, 31, 173)">Produtos Disponíveis</h4>
+
     <ul>
         <li>Arroz</li>
     </ul>
@@ -36,21 +36,26 @@
 
     <br>
 
-    <input type = "text" id = "nomeDoProduto" placeholder="Digite o nome do produto">
+    <input  style = "width: 100%; text-align: center;" type = "text" id = "nomeDoProduto" placeholder="Digite o nome do produto">
     <br><br>
 
+    <button style = "color:rgb(255, 255, 255);     background-color:rgb(166, 107, 233);" onclick = "mostrarValor()">Consultar Valor</button>
+
+    <br><br>
     <div id = "valorProduto"></div>
-
-    <br>
-
-    <button onclick = "mostrarValor()">Consultar Valor</button>
-    <button onclick = "adicionarCarrinho()">Adicionar ao Carrinho</button>
-    <button onclick = "finalizarCompra()">Finalizar Compra</button>
-
     <br><br>
 
-    <div id = "valorFinal"></div>
+    <button style = "color:rgb(255, 255, 255); background-color:rgb(166, 107, 233);" onclick = "adicionarCarrinho()">Adicionar ao Carrinho</button>
 
+    <br><br>
+    <div id = "produtosCarrinho"></div>
+    <br><br>
+
+    <button style = "color:rgb(255, 255, 255); background-color:rgb(166, 107, 233);" onclick = "finalizarCompra()">Finalizar Compra</button>
+
+    <br><br>
+    <div id = "totalItens"></div>
+    <div id = "valorFinal"></div>
     <br><br>
 
     <script src = "script.js"></script>

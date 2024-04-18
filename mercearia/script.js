@@ -8,6 +8,9 @@ let carrinho = [];
 let nomeDoProduto = document.getElementById ("nomeDoProduto");
 let valorProduto = document.getElementById ("valorProduto");
 let valorFinal = document.getElementById ("valorFinal");
+let totalItens = document.getElementById ("totalItens");
+let produtosCarrinho = document.getElementById ("produtosCarrinho");
+
 
 // Variável de controle para condições.
 var validar = true;
@@ -73,7 +76,7 @@ function adicionarCarrinho(){
     }
 
 console.log(carrinho);
-console.log(`Arroz: ${contadorArroz}, Feijão: ${contadorFeijao}, Suco: ${contadorSuco}, Macarrão: ${contadorMacarrao}, Ovo: ${contadorOvo}`);
+produtosCarrinho.innerHTML = (`Arroz: ${contadorArroz}, Feijão: ${contadorFeijao}, Suco: ${contadorSuco}, Macarrão: ${contadorMacarrao}, Ovo: ${contadorOvo}`);
 }
 
 function finalizarCompra(){
@@ -85,10 +88,10 @@ function finalizarCompra(){
 
     totalValor = (totalArroz + totalFeijao + totalSuco + totalMacarrao + totalOvo);
 
-    valorFinal.innerHTML = ("O total da sua compra esta em R$ " + totalValor.toFixed(2))
+    totalItens.innerHTML = (`O total de itens é: ${contadorArroz + contadorFeijao + contadorMacarrao + contadorSuco + contadorOvo}`)
+    valorFinal.innerHTML = (`O total da sua compra ficou em R$ " ${totalValor.toFixed(2)}`)
 
     if (totalValor == 0){
         valorFinal.innerHTML = "Carrinho Vazio!"
     }
 }
-// oiiii

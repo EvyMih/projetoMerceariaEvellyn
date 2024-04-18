@@ -31,3 +31,15 @@ valorProduto.innerText = 'As Maças custam: R$ ${maca}`
 03 - Epata - Adicione um evento ao botão de colocar no carrinho
 
 Para o botão de colocar no carrinho, adicione um evento de clique. O nome do produto deve ser inserido em um array de lista de compras do usuário(carrinho), ou seja, dar um ‘push’ do nome ou objeto produto (formado por nome) na variável carrinho (array)
+
+-----------------------------------------------------------------------------------------------
+
+Etapa 04 - Inserir uma função no botão "finalizar compra" para consultar os itens no carrinho (imprimir o array no console) e o valor total da compra.
+
+Retornar ‘Carrinho vazio’ caso o valor seja 0.
+
+-----------------------------------------------------------------------------------------------
+
+Etapa 5 - Coloque na tela o valor total de itens no carrinho e o valor total da compra do usuário de forma dinâmica
+
+Mostre dinamicamente o número de produtos presentes no carrinho do usuário e o valor total do compra, posicione uma tag de texto para receber este valor no HTML (ativar através de uma função onclick) e sempre que o usuário clicar em "finalizar a compra" os valores devem ser atualizados.
