@@ -8,63 +8,66 @@ let totalCarrinho = Number();
 let controle = 0;
 let totalItens = 0;
 
-function frutaEscolhida(nomeDoProduto){
-    nomeDoProduto = nomeDoProduto.value.toLowerCase();
+validadorDeNome = () => {
+    return nomeDoProduto.value.toLowerCase()
+}
 
-    if(nomeDoProduto == "banana"){
-        return `O valor do item ${nomeDoProduto} é R$ 5,99 KG`
-    }else if(nomeDoProduto == 'laranja'){
-        return `O valor do item "${nomeDoProduto}" é RS 4,98 kg`
-    }else if(nomeDoProduto == 'maca'){
-        return `O valor do item "${nomeDoProduto}" é RS 5,25 kg`
-    }else if(nomeDoProduto == 'abacate'){
-        return `O valor do item "${nomeDoProduto}" é RS 8,00 kg`
-    }else if(nomeDoProduto == 'pera'){
-        return `O valor do item "${nomeDoProduto}" é RS 7,75 kg`
+function frutaEscolhida(){
+
+    if(validadorDeNome() == "banana"){
+        return `O valor do item ${validadorDeNome()} é R$ 5,99 KG`
+    }else if(validadorDeNome() == 'laranja'){
+        return `O valor do item "${validadorDeNome()}" é RS 4,98 kg`
+    }else if(validadorDeNome() == 'maca'){
+        return `O valor do item "${validadorDeNome()}" é RS 5,25 kg`
+    }else if(validadorDeNome() == 'abacate'){
+        return `O valor do item "${validadorDeNome()}" é RS 8,00 kg`
+    }else if(validadorDeNome() == 'pera'){
+        return `O valor do item "${validadorDeNome()}" é RS 7,75 kg`
     }else{
-        voltar `Digite o nome de um dos produtos disponíveis na loja`
+        return `Digite o nome de um dos produtos disponíveis na loja`
     }
 }
 
 valores = () => {
-    valorProduto.innerHTML = (frutaEscolhida(nomeDoProduto));
+    valorProduto.innerHTML = (frutaEscolhida());
 }
 
 function addCarrinho(){
     let produto;
 
-    if(nomeDoProduto.value.toLowerCase() == "banana"){
+    if(validadorDeNome() == "banana"){
         produto = {
-            nome: nomeDoProduto.value.toLowerCase,
-            valor: 5.99
+        nome: nomeDoProduto,
+        preco: 5.99
         }
         totalItens ++
 
-    }else if(nomeDoProduto.value.toLowerCase() == 'laranja'){
+    }else if(validadorDeNome() == 'laranja'){
         produto = {
-            nome: nomeDoProduto.value.toLowerCase(),
-            preço: 4.98
+        nome: nomeDoProduto,
+        preco: 4.98
         }
         totalItens++
 
-    }else if(nomeDoProduto.value.toLowerCase() == 'maca'){
+    }else if(validadorDeNome() == 'maca'){
         produto = {
-            nome: nomeDoProduto.value.toLowerCase(),
-            preço: 5.25
+        nome: nomeDoProduto,
+        preco: 5.25
         }
         totalItens++
 
-    }else if(nomeDoProduto.value.toLowerCase() == 'abacate'){
+    }else if(validadorDeNome() == 'abacate'){
         produto = {
-            nome: nomeDoProduto.value.toLowerCase(),
-            preço: 8.00
+        nome: nomeDoProduto,
+        preco: 8.00
         }
         totalItens++
 
-    }else if(nomeDoProduto.value.toLowerCase() == 'pera'){
+    }else if(validadorDeNome() == 'pera'){
         produto = {
-            nome: nomeDoProduto.value.toLowerCase(),
-            preço: 7.75
+        nome: nomeDoProduto,
+        preco: 7.75
         }
         totalItens++
 
@@ -74,4 +77,23 @@ function addCarrinho(){
     }
 
     carrinho.push(produto);
+    console.log(carrinho);
+
+    if(carrinho != 0){
+        for (i = controle; i < carrinho.length; i++){
+            totalCarrinho += carrinho[i].preco
+            controle ++
+        }
+    }else{
+        valorCarrinho.innerHTML = ("Carrinho Vazio");
+    }
 } 
+
+function totalCompra(){
+    if(totalCarrinho != 0){
+        valorCarrinho.innerHTML = (`total de itens no carrinho ${totalItens}<br>Valor Total: R$${totalCarrinho.toFixed(2)}`);
+
+    }else{
+        valorCarrinho.innerHTML = ("Carrinho Vazio");
+    }
+}
